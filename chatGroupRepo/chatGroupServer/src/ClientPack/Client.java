@@ -64,7 +64,7 @@ new Thread(){
                 groupChatMessage = bufferedReader.readLine();
                 System.out.println(groupChatMessage);
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                System.out.println("connection lost.");
             }
         }
 
@@ -77,7 +77,7 @@ Scanner sc = new Scanner(System.in);
      String userName = sc.nextLine();
      Socket  socket = null;
      try {
-         socket = new Socket("localhost",1246);
+         socket = new Socket("192.168.1.7",1246);
      } catch (IOException e) {
      }
      Client client = new Client(socket,userName);
